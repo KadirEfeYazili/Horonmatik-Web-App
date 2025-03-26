@@ -27,7 +27,7 @@ Horonmatik, kemençe çalmayı ve horon oynamayı sevenler için eğlenceli bir 
 3. Uygulama çalışmaya başlayacaktır.
 
 ## **Çalışma Görseli:**
-![Horonmatik Demo](horonmatik-demo.png)
+![Horonmatik Demo](assets/horonmatikdemo.gif)
 
 ## **Kreditler:**
 - **Kadir Efe Yazılı** tarafından yapılmıştır. [Instagram Profilim](https://www.instagram.com/efeyazili/)
