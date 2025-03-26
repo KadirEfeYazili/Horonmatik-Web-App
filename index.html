@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kemençe Çal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="kemençe-wrapper">
+          <img id="horon-gif-left" src="assets/gif.gif" alt="Horon Oynayan Adam">
+          <img id="horon-gif-right" src="assets/gif.gif" alt="Horon Oynayan Adam">
+
+            <img src="assets/logosol.png" alt="Logo 1" class="logo logo-left">
+            <h1 id="horonmatik">HORONMATİK</h1>
+            <img src="assets/kemence-resmi.png" alt="Kemençe" id="kemençe">
+            <img src="assets/logosag.png"alt="Logo 2" class="logo logo-right">
+            <div id="yay"></div>
+        </div>
+      <select id="song-selector">
+    <option value="assets/kemence1.mp3">Şarkı 1</option>
+    <option value="assets/kemence2.mp3">Şarkı 2</option>
+    <option value="assets/kemence3.mp3">Şarkı 3</option>
+    <option value="assets/kemence4.mp3">Şarkı 4</option>
+    <option value="assets/kemence5.mp3">Şarkı 5</option>
+    <option value="assets/kemencesesi.mp3">Şarkı 6</option>
+    <option value="assets/OrduluYunus-KemenceninYayi.mp3">Ordulu Yunus-Kemençenin Yayi 1930 </option>
+    <option value="assets/OrduKarsilamasi.mp3">Ordu Karşılaması</option>
+</select>
+<button id="play-button">▶ Çal</button>
+<div class="credit">
+    <a href="https://www.instagram.com/efeyazili/" target="_blank" class="glitch-text"><span class="underline">Kadir Efe Yazılı</span></a> Tarafından Yapılmıştır
+</div>
+</div>
+<audio id="kemençe-sesi" src="assets/kemence-sesi.mp3"></audio>
+<script>
+var audio = document.getElementById("kemençe-sesi");
+var button = document.getElementById("play-button");
+var yay = document.getElementById("yay");
+var songSelector = document.getElementById("song-selector");
+var horonGifLeft = document.getElementById("horon-gif-left");
+var horonGifRight = document.getElementById("horon-gif-right");
+
+button.addEventListener("click", function() {
+if (audio.paused) {
+audio.src = songSelector.value;
+audio.play();
+button.innerHTML = "⏸ Durdur";
+yay.classList.add("animate-yay");
+yay.style.opacity = 1;
+horonGifLeft.style.opacity = 1; 
+horonGifRight.style.opacity = 1;
+} else {
+audio.pause();
+audio.currentTime = 0;
+button.innerHTML = "▶ Çal";
+yay.classList.remove("animate-yay");
+yay.style.opacity = 0;
+horonGifLeft.style.opacity = 0; 
+horonGifRight.style.opacity = 0; 
+}
+});
+
+    </script>
+</body>
+</html>
+
+<style>
+#horonmatik{
+font-family:'Bangers';
+font-size:25px;
+text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+
+}
+body {
+margin: 0;
+padding: 0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-image: url('assets/arkaplan.jpg');
+background-size: cover;
+background-position: center;
+font-family: 'Poppins', sans-serif;
+position: relative;
+}
+
+.container {
+text-align: center;
+background: rgba(255, 255, 255, 0.4);
+padding: 15px;
+border-radius: 20px;
+box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+backdrop-filter: blur(10px);
+max-width: 25%;
+}
+
+.kemençe-wrapper {
+position: relative;
+display: inline-block;
+}
+
+#kemençe {
+width: 100%;
+max-width: 500px; 
+border-radius: 15px;
+margin-bottom: 20px;
+position: relative;
+}
+
+.logo {
+width: 22%;
+position: absolute;
+top: 15%;
+transform: translateY(-50%);
+}
+
+.logo-left {
+left: 10px;
+}
+
+.logo-right {
+right: 10px;
+}
+
+#yay {
+position: absolute;
+width: 120px;
+height: 5px;
+background: #8B4513;
+top: 60%;
+left: 50%;
+transform: translate(-50%, -50%) rotate(-40deg);
+border-radius: 3px;
+opacity: 0;
+}
+
+.animate-yay {
+animation: yay-motion 0.5s infinite alternate;
+}
+
+@keyframes yay-motion {
+0% { transform: translate(-55%, -50%) rotate(-35deg); }
+100% { transform: translate(-45%, -50%) rotate(-25deg); }
+}
+
+.credit a {
+font-size: 18px;
+font-weight: bold;
+color: #4a2626;
+text-decoration: none;
+transition: color 0.3s;
+}
+
+.credit a:hover {
+color: #e74c3c;
+}
+
+button {
+padding: 6px 20px;
+font-size: 20px;
+cursor: pointer;
+background: #f39c12;
+color: black;
+border: none;
+border-radius: 10px;
+transition: 0.3s;
+display: block;
+margin: 10px auto;
+width: 70%;
+}
+
+button:hover {
+background: #e67e22;
+transform: scale(1.08);
+}
+
+@media screen and (max-width: 768px) {
+.container {
+    max-width: 95%;
+    padding: 20px;
+}
+
+#kemençe {
+    max-width: 360px; 
+}
+
+.logo {
+    width: 18%; 
+}
+
+button {
+    width: 90%;
+    font-size: 18px;
+    padding: 12px;
+}
+
+.credit a {
+    font-size: 16px;
+}
+}
+#song-selector {
+width: 40%;
+padding: 5px;
+font-size: 18px;
+border-radius: 8px;
+border: 2px solid #f39c12;
+background: #00913a;
+color: white;
+cursor: pointer;
+transition: 0.3s;
+text-align: center;
+margin-bottom: 15px;
+
+}
+
+#song-selector:hover {
+border-color: #e67e22;
+transform: scale(1.05);
+}
+
+#horon-gif-left, #horon-gif-right {
+position: absolute;
+width: 150px; 
+opacity: 0;
+transition: opacity 0.5s ease-in-out; 
+}
+
+#horon-gif-left {
+bottom: 10%;
+left: 5%; 
+}
+
+#horon-gif-right {
+bottom: 10%;
+right: 5%; 
+}
+
+
+</style>
