@@ -1,4 +1,4 @@
-# **Horonmatik - Kemençe Çal**
+# **Horonmatik**
 
 Horonmatik, kemençe çalmayı ve horon oynamayı sevenler için eğlenceli bir web uygulamasıdır. Uygulama, kullanıcıların seçebileceği farklı kemençe melodilerini çalar ve animasyonlu horon figürleri eşliğinde bir görsel deneyim sunar.
 
@@ -14,7 +14,7 @@ Horonmatik, kemençe çalmayı ve horon oynamayı sevenler için eğlenceli bir 
 2. "Şarkı Seç" menüsünden bir kemençe melodisi seçin.
 3. "▶ Çal" butonuna tıklayarak müziği başlatın.
 4. Müzik çalmaya başladığında, horon animasyonunu ve yay hareketini görebilirsiniz.
-5. Müzik durdurulabilir ve animasyonlar durur.
+5. Müzik durdurulunca animasyonlar durur.
 
 ## **Teknolojiler:**
 - **HTML5:** Web sayfası yapısı için.
